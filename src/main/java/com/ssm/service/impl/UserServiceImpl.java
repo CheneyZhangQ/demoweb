@@ -15,9 +15,24 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 查询用户信息
+     * @param id
+     * @return
+     */
     @Override
     public User getUser(String id){
         User user = userMapper.selectByPrimaryKey(Integer.parseInt(id));
         return user;
+    }
+
+    /**
+     * 添加用户信息
+     * @param user
+     * @return
+     */
+    @Override
+    public int addUser(User user){
+        return userMapper.insert(user);
     }
 }

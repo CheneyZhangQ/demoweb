@@ -8,4 +8,6 @@ import com.ssm.model.User;
 public interface IUserService {
 
     User getUser(String id);
+
+    int addUser(User user);
 }
